@@ -6,11 +6,13 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-rooting-module";
 import {HttpClientModule} from "@angular/common/http";
+import { SubscriptionComponent } from './subscription/subscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    SubscriptionComponent
   ],
   imports: [
     BrowserModule,
