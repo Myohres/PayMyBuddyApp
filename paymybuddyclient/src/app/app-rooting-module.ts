@@ -4,6 +4,7 @@ import {AuthenticationComponent} from "./authentication/authentication.component
 import {SubscriptionComponent} from "./subscription/subscription.component";
 import {NavigationComponent} from "./navigation/navigation.component";
 import {TransferComponent} from "./transfer/transfer.component";
+import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
   { path: '', component: AuthenticationComponent },
@@ -11,7 +12,7 @@ const routes: Routes = [
   { path:'home', component: NavigationComponent },
   { path:'transfer', component: TransferComponent},
   { path:'profile', component: NavigationComponent },
-  { path:'contact', component: NavigationComponent },
+  { path:'contact', component: ContactComponent },
 ];
 
 @NgModule({

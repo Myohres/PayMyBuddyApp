@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TransferComponent } from './transfer/transfer.component';
     AuthenticationComponent,
     SubscriptionComponent,
     NavigationComponent,
-    TransferComponent
+    TransferComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

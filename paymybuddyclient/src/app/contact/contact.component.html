@@ -1,0 +1,73 @@
+<app-navigation></app-navigation>
+<p *ngIf="isError">Une erreur s'est produite</p>
+
+<div class="d-flex justify-content-around">
+
+  <form class="form-inline">
+    <div class="form-group mb-2">
+      <input [formControl]="contactEmail" class="form-control" placeholder="Contact email">
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <button (click)="addContact()" type="button" class="btn btn-primary mb-2">Add contact</button>
+    </div>
+    <div class="form-group mb-2">
+      <button (click)="deleteContact()" type="button" class="btn btn-primary mb-2">Delete contact</button>
+    </div>
+  </form>
+  <form class="form-inline">
+    <div class="form-group mb-2">
+      <input [formControl]="bankName" class="form-control" placeholder="bankName">
+      <input [formControl]="bankAccountNumber" class="form-control" placeholder="bankAccountNumber">
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+      <button (click)="addBank()" type="button" class="btn btn-primary mb-2">Add bank</button>
+    </div>
+
+    <div class="form-group mb-2">
+      <input [formControl]="bankAccountNumber" class="form-control" placeholder="bankAccountNumber">
+      <button (click)="deleteBank()" type="button" class="btn btn-primary mb-2">Delete bank</button>
+    </div>
+  </form>
+</div>
+<div class="d-flex justify-content-around">
+  <div class="p-2">
+    <p>My Contacts</p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Lastname</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contact of contactData">
+        <th scope="row">{{contact.lastName }}</th>
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.email }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="p-2">
+    <p>My Banks</p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Account Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let bank of bankData">
+        <th scope="row">{{bank.name }}</th>
+        <td>{{ bank.accountNumber }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
