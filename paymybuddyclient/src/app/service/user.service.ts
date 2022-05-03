@@ -19,7 +19,7 @@ export class UserService {
   private userFirstName: string = "";
   private userAmount: number = 0;
   private contactList: Contact[] = [];
-  private registerState = "";
+  public registerState = "";
 
 
   constructor( private http: HttpClient, private router: Router){
@@ -76,27 +76,6 @@ export class UserService {
           console.log("Error auth", err);
         }
       });
-  }
-
-  public register(email: string, user: User){
-    this.registerState = "";
-    this.loginTaken(email).subscribe({
-      next: value => {
-        console.log("login taken : " +value);
-        if (!value){
-          console.log("adding user ");
-          this.addUser(user).subscribe({
-            complete:() => {
-              console.log("user added")
-              this.registerState = "user added";
-            }
-          });
-        } else {
-          this.registerState = "email not free";
-        }},
-      error: err => console.error("error" +err),
-      complete:() => console.log("fin de registration")
-    });
   }
 
   logout(): void {
