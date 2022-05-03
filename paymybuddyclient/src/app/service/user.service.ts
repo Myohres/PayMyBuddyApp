@@ -70,7 +70,7 @@ export class UserService {
           this.userFirstName = this.userData.firstName;
           this.userLastName = this.userData.lastName;
           this.contactList = this.userData.contactList;
-          this.router.navigate(['Transfer']);
+          this.router.navigate(['transfer']);
         },
         error: err => {
           console.log("Error auth", err);
@@ -101,7 +101,7 @@ export class UserService {
 
   logout(): void {
     this.userData = null;
-    this.router.navigate(['Authentication']);
+    this.router.navigate(['authentication']);
   }
 
   getUserId() {
