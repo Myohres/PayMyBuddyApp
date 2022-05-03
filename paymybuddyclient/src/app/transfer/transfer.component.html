@@ -1,0 +1,99 @@
+<app-menu></app-menu>
+<form>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <div class="p-2">
+        <p>Account amount : {{userAmount}} €</p>
+        <div class="d-flex">
+          <p class="mr-auto p-2">Transfer to Contact</p>
+          <p class="p-2">
+            <a routerLink="/Contact"> <button type="button" class="btn btn-primary btn-sm">Add contact</button></a>
+          </p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <select [(ngModel)]="ContactSelectedValue" class="custom-select" id="contactTransferGroup" name="contact">
+            <option selected>Select Contact</option>
+            <option *ngFor="let contact of contactData" [value]="contact.id">
+              {{contact.lastName}} {{contact.firstName}}
+            </option>
+          </select>
+          <input [formControl]="amountContact" type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
+          <input [formControl]="descriptionContact" type="text" class="form-control" placeholder="Description" aria-label="Username" aria-describedby="basic-addon1">
+          <div>
+            <button (click)="PaymentToContact()" type="button" class="btn btn-success btn-sm">Pay</button>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="d-flex">
+          <p class="mr-auto p-2">Transfer to Bank</p>
+          <p class="p-2">
+            <a routerLink="/bank"> <button type="button" class="btn btn-primary btn-sm">Add bank</button></a>
+          </p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <select [(ngModel)]="toBankSelectedValue" class="custom-select" id="toBankTransferGroup" name="bank">
+            <option selected>Select Bank</option>
+            <option *ngFor="let bank of bankData" [value]="bank.name">
+              {{bank.name}} {{bank.accountNumber}}
+            </option>
+          </select>
+          <input [formControl]="amountBank" type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
+          <input [formControl]="descriptionBank" type="text" class="form-control" placeholder="Description" aria-label="Username" aria-describedby="basic-addon1">
+          <div>
+            <button (click)="PaymentToBank()" type="button" class="btn btn-success btn-sm">Pay</button>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="d-flex">
+          <p class="mr-auto p-2">Transfer from Bank</p>
+        </div>
+        <div class="d-flex justify-content-around">
+          <select [(ngModel)]="fromBankSelectedValue" class="custom-select" id="fromBankTransferGroup" name="bank">
+            <option selected>Select Bank</option>
+            <option *ngFor="let bank of bankData" [value]="bank.name">
+              {{bank.name}} {{bank.accountNumber}}
+            </option>
+          </select>
+          <input [formControl]="amountUser" type="number" class="form-control" placeholder="Amount" aria-label="Username" aria-describedby="basic-addon1">
+          <input [formControl]="descriptionUser" type="text" class="form-control" placeholder="Description" aria-label="Username" aria-describedby="basic-addon1">
+          <div>
+            <button (click)="PaymentToUser()" type="button" class="btn btn-success btn-sm">Pay</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2">
+        <p>My transactions </p>
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Sender</th>
+            <th scope="col"></th>
+            <th scope="col">Recipient</th>
+            <th scope="col"></th>
+            <th scope="col">Description</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Commission</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let transaction of transactionData">
+            <th scope="row">{{ transaction.date | date: 'dd/MM/yyyy - HH:mm' }}</th>
+            <td>{{ transaction.senderName1}}</td>
+            <td>{{ transaction.senderName2}}</td>
+            <td>{{ transaction.recipientName1 }}</td>
+            <td>{{ transaction.recipientName2 }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.amountTransaction }}</td>
+            <td>{{ transaction.amountCommission }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</form>

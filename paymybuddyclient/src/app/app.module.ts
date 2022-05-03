@@ -8,13 +8,15 @@ import {AppRoutingModule} from "./app-rooting-module";
 import {HttpClientModule} from "@angular/common/http";
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
     SubscriptionComponent,
-    NavigationComponent
+    NavigationComponent,
+    TransferComponent
   ],
   imports: [
     BrowserModule,
