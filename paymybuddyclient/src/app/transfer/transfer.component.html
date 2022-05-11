@@ -34,7 +34,7 @@
         <div class="d-flex justify-content-around">
           <select [(ngModel)]="toBankSelectedValue" class="custom-select" id="toBankTransferGroup" name="bank">
             <option selected>Select Bank</option>
-            <option *ngFor="let bank of bankData" [value]="bank.name">
+            <option *ngFor="let bank of bankData" [value]="bank.id">
               {{bank.name}} {{bank.accountNumber}}
             </option>
           </select>
@@ -52,7 +52,7 @@
         <div class="d-flex justify-content-around">
           <select [(ngModel)]="fromBankSelectedValue" class="custom-select" id="fromBankTransferGroup" name="bank">
             <option selected>Select Bank</option>
-            <option *ngFor="let bank of bankData" [value]="bank.name">
+            <option *ngFor="let bank of bankData" [value]="bank.id">
               {{bank.name}} {{bank.accountNumber}}
             </option>
           </select>
