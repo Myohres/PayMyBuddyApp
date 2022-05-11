@@ -32,6 +32,7 @@ class BankMapperTest {
     @Test
     void convertBankDTO() {
         BankLightDTO bankLightDTO = bankMapper.convertEntityToDTO(bank);
+        assertEquals(1L,bankLightDTO.getId());
         assertEquals("55", bankLightDTO.getAccountNumber());
         assertEquals("bankName",bankLightDTO.getName());
     }

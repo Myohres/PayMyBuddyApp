@@ -7,6 +7,8 @@ import lombok.Setter;
 @Setter
 public class BankLightDTO {
 
+    /** Id bank. */
+    private long id;
     /** Account number bank. */
     private String accountNumber;
     /** Bank name. */

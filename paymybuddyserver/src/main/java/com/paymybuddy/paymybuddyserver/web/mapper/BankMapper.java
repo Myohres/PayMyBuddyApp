@@ -15,6 +15,7 @@ public class BankMapper {
      */
     public BankLightDTO convertEntityToDTO(final BankEntity bankEntity) {
         BankLightDTO bankLightDTO = new BankLightDTO();
+        bankLightDTO.setId(bankEntity.getId());
         bankLightDTO.setName(bankEntity.getName());
         bankLightDTO.setAccountNumber(bankEntity.getAccountNumber());
         return bankLightDTO;
