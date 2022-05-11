@@ -80,7 +80,7 @@ export class UserService {
 
   logout(): void {
     this.userData = null;
-    this.router.navigate(['authentication']);
+    this.router.navigate(['']);
   }
 
   getUserId() {
